@@ -1,0 +1,5 @@
+---
+
+- src: geerlingguy.nginx
+- src: cloudalchemy.prometheus
+- src: orachide.grafana

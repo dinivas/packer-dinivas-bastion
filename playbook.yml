@@ -1,0 +1,8 @@
+---
+- name: Provision Image Dinivas Bastion - Proxy to build
+  hosts: packer-dinivas-bastion
+  become: true
+  roles:
+    - role: geerlingguy.nginx
+    - role: cloudalchemy.prometheus
+    - role: orachide.grafana
