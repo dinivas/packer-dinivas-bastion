@@ -1,0 +1,39 @@
+---
+
+- name: Prepare Host
+  hosts: packer-dinivas-proxy
+  become: true
+  vars:
+    consul_user: consul
+    consul_group: bin
+    consul_config_path: "/etc/consul"
+    consul_configd_path: "{{ consul_config_path }}/consul.d"
+    consul_domain: dinivas
+  roles:
+    - role: geerlingguy.repo-epel
+    - role: cloudalchemy.node-exporter
+    - role: dinivas.consul
+      consul_node_role: server
+      consul_bootstrap_expect: true
+      consul_bootstrap_expect_value: 1
+      consul_datacenter: dinivas-dc
+      consul_ui: true
+      consul_bind_address: '127.0.0.1'
+      consul_client_address: '0.0.0.0'
+      consul_encrypt_enable: false
+      consul_install_upgrade: true
+  tasks:
+    - name: Install utilities package
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - jq
+    - name: Copy node_exporter consul service definition
+      template:
+        src: "{{ playbook_dir }}/templates/node_exporter-service.json.j2"
+        dest: "{{ consul_configd_path }}/node_exporter-service.json"
+        mode: 0644
+        owner: "{{ consul_user }}"
+        group: "{{ consul_group }}"
+      notify: restart consul

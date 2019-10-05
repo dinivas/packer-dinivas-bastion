@@ -1,6 +1,9 @@
 ---
 
+- src: geerlingguy.repo-epel
 - src: geerlingguy.nginx
+- src: cloudalchemy.node-exporter
+- src: dinivas.consul
 - src: cloudalchemy.prometheus
 - src: griggheo.consul-template
 - src: orachide.grafana

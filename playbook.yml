@@ -1,8 +1,94 @@
 ---
-- name: Provision Image Dinivas Bastion - Proxy to build
-  hosts: packer-dinivas-bastion
+- name: Provision Image Dinivas proxy to build
+  hosts: packer-dinivas-proxy
   become: true
+  vars:
+    external_domain_name: dinivas.local
   roles:
     - role: geerlingguy.nginx
+      nginx_remove_default_vhost: false
+      nginx_vhosts: []
     - role: cloudalchemy.prometheus
+      prometheus_scrape_configs:
+        - job_name: "prometheus"
+          metrics_path: /metrics
+          static_configs:
+            - targets:
+                - "{{ ansible_fqdn | default(ansible_host) | default('localhost') }}:9090"
+        - job_name: "consul"
+          consul_sd_configs:
+            - server: 'localhost:8500'
+          relabel_configs:
+            - source_labels: [__meta_consul_tags]
+              regex: .*,monitor,.*
+              action: keep
+            - source_labels: [__meta_consul_service]
+              target_label: service
+            - source_labels: [__meta_consul_node]
+              target_label: host
     - role: orachide.grafana
+      grafana_version: 6.3.6
+      grafana_user: grafana
+      grafana_user_group: grafana
+      grafana_install_root_folder: /etc/grafana
+      grafana_data_dir: /var/lib/grafana
+      grafana_datasources_templates_path: "{{ playbook_dir }}/templates/grafana/datasources"
+      grafana_dashboards_templates_path: "{{ playbook_dir }}/templates/grafana/dashboards"
+      grafana_dashboards_config_template: "{{ playbook_dir }}/templates/grafana/dashboards-config.yml.j2"
+    - role: griggheo.consul-template
+      consul_template_version: "0.20.0"
+      consul_template_home: /opt/consul-template
+      consul_template_use_systemd: true
+      consul_template_log_level: debug
+      consul_template_templates:
+        - name: nginx-template.ctmpl
+          dest: /etc/nginx/conf.d/consul-provided.conf
+          cmd: "service nginx reload"
+          perms: 0644
+          backup: true
+      consul_template_template_templates:
+        - src: "{{ playbook_dir }}/templates/consul-template/nginx-template.ctmpl.j2"
+
+  tasks:
+    - name: Source Grafana global configuration file
+      template:
+        src: "{{ playbook_dir }}/templates/grafana/grafana.ini.j2"
+        dest: "{{ grafana_install_root_folder }}/grafana.ini"
+      notify:
+        - Restart Grafana service
+    - name: Copy prometheus consul service definition
+      template:
+        src: "{{ playbook_dir }}/templates/prometheus/prometheus-service.json.j2"
+        dest: /etc/consul/consul.d/prometheus-service.json
+        mode: 0644
+        owner: consul
+        group: bin
+      notify: Restart Consul service
+    - name: Copy grafana consul service definition
+      template:
+        src: "{{ playbook_dir }}/templates/grafana/grafana-service.json.j2"
+        dest: /etc/consul/consul.d/grafana-service.json
+        mode: 0644
+        owner: consul
+        group: bin
+      notify: Restart Consul service
+
+  handlers:
+    - name: Restart Grafana service
+      service:
+        name: grafana-server
+        enabled: yes
+        state: restarted
+      become: true
+    - name: Restart Consul service
+      service:
+        name: consul
+        enabled: yes
+        state: restarted
+      become: true
+    - name: Restart Prometheus service
+      service:
+        name: prometheus
+        enabled: yes
+        state: restarted
+      become: true
