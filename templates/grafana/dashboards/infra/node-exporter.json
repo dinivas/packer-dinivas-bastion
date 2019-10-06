@@ -19946,7 +19946,7 @@
         "multi": false,
         "name": "hostname",
         "options": [],
-        "query": "label_values(node_uname_info{job=~\"$job\",service=\"node_exporter\"}, nodename)",
+        "query": "label_values(node_uname_info{job=~\"$job\",service=\"node_exporter\"}, host)",
         "refresh": 1,
         "regex": "",
         "sort": 1,
