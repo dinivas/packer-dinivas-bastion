@@ -9,3 +9,11 @@ providers:
   editable: true
   options:
     path: {{ grafana_data_dir }}/dashboards/infra
+- name: 'dinivas-rabbitmq'
+  orgId: 1
+  folder: 'Rabbitmq'
+  type: file
+  disableDeletion: false
+  editable: true
+  options:
+    path: {{ grafana_data_dir }}/dashboards/rabbitmq
