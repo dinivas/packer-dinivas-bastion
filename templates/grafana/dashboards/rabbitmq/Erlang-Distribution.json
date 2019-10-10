@@ -2252,7 +2252,7 @@
           "text": "rabbitmq-qq",
           "value": "rabbitmq-qq"
         },
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "definition": "label_values(rabbitmq_identity_info, rabbitmq_cluster)",
         "hide": 0,
         "includeAll": false,
