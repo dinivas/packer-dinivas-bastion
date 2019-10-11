@@ -2279,7 +2279,7 @@
             "$__all"
           ]
         },
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "definition": "label_values(erlang_vm_dist_proc_status, type)",
         "hide": 0,
         "includeAll": true,
