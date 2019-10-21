@@ -17,3 +17,11 @@ providers:
   editable: true
   options:
     path: {{ grafana_data_dir }}/dashboards/rabbitmq
+- name: 'dinivas-jenkins'
+  orgId: 1
+  folder: 'Jenkins'
+  type: file
+  disableDeletion: false
+  editable: true
+  options:
+    path: {{ grafana_data_dir }}/dashboards/jenkins

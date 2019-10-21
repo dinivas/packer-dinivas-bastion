@@ -857,7 +857,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -1009,7 +1009,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -1162,7 +1162,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -1314,7 +1314,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -1481,7 +1481,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -1617,7 +1617,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -1767,7 +1767,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -1903,7 +1903,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -2003,7 +2003,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -2148,7 +2148,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -2284,7 +2284,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -2384,7 +2384,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -2543,7 +2543,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -2679,7 +2679,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -2779,7 +2779,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -2924,7 +2924,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -3077,7 +3077,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -3177,7 +3177,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -3322,7 +3322,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -3423,7 +3423,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -3582,7 +3582,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -3718,7 +3718,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -3871,7 +3871,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -4024,7 +4024,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -4191,7 +4191,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -4327,7 +4327,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -4480,7 +4480,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -4647,7 +4647,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -4784,7 +4784,7 @@
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
@@ -4937,7 +4937,7 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "{{rabbitmq_node}}",
+          "legendFormat": "{% raw %}{{rabbitmq_node}}{% endraw %}",
           "refId": "A"
         }
       ],
