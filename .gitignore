@@ -1,3 +1,4 @@
 galaxy_roles
 playbook.retry
 *.pem
+manifest.json
